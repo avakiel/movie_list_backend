@@ -3,7 +3,8 @@ const pg = require('pg');
 const url = require('url');
 const { Sequelize } = require('sequelize');
 const utils = require('util');
-const config = require('../config');
+const { config } = require('../config');
+require('dotenv').config();
 
 const client = new pg.Client(config);
 client.connect(function (err) {
