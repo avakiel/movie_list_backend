@@ -69,7 +69,7 @@ const postMovieController = async (req, res) => {
     return;
   }
 
-  res.status(OK).send(newMovie);
+  res.status(CREATED).send(newMovie);
 };
 
 module.exports = {
