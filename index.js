@@ -1,5 +1,4 @@
 'use strict';
-
 const { createServer } = require('./server');
 
 const PORT = process.env.PORT || 5700;
