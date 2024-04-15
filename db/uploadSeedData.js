@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { Movie } = require('./models/movie')
+const { Movie } = require('../models/movie')
 
 const moviesData = require('./seeders/db.json');
 

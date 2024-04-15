@@ -1,6 +1,6 @@
-const { sequelize } = require("./db");
+const { sequelize } = require("./index");
 const { loadSeed } = require("./uploadSeedData");
-const  models = require('./models/models')
+const  models = require('../models/models')
 const movies = require("./seeders/db.json");
 
 
