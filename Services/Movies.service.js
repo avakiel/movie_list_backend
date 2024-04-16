@@ -33,7 +33,7 @@ const patchMovieById = async (id, data) => {
     try {
         const [updatedRowsCount] = await Movie.update(data, {
             where: {
-                id: id
+                id: +id
             }
         });
 

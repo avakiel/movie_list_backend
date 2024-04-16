@@ -8,7 +8,7 @@ watchedRouter.use(bodyParser.json());
 
 watchedRouter.get("/", getAllWatchedController);
 watchedRouter.delete("/:id", deleteWatchedController);
-watchedRouter.post("/:id", addToWatchedController);
+watchedRouter.post("/", addToWatchedController);
 
 module.exports = {
   watchedRouter,

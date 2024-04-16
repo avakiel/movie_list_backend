@@ -24,7 +24,7 @@ const {
   };
   
   const addToWatchedController = async (req, res) => {
-    const { id } = req.params;
+    const { id } = req.body;
     const add = await addToWatched(id);
   
     if (!add) {
