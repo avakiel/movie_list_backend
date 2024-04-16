@@ -36,16 +36,20 @@ const deleteFromWatched = async (id) => {
 
 const addToWatched = async (id) => {
   try {
-    const existingWatched = await Watched.findOne({
+    await Watched.findOrCreate({
       where: {
         movieId: +id,
       },
     });
+    
+    const movie = await Movie.findOne({
+      where: {
+        id: +id
+      }
+    });
 
-    if (!existingWatched) {
-      await Watched.create({ movieId: +id });
-      return id;
-    }
+    return movie;
+
   } catch (error) {
     console.error("Error adding to watched:", error);
     throw new Error("Addition error in database");

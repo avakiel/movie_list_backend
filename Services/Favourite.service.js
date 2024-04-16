@@ -35,18 +35,22 @@ const deleteFromFavourite = async (id) => {
 
 const addToFavourite = async (id) => {
   try {
-    const existingFavourite = await Favourite.findOne({
+    await Favourite.findOrCreate({
       where: {
         movieId: +id,
       },
     });
+    
+    const movie = await Movie.findOne({
+      where: {
+        id: +id
+      }
+    });
 
-    if (!existingFavourite) {
-      await Favourite.create({ movieId: +id });
-      return id;
-    }
+    return movie;
+
   } catch (error) {
-    console.error("Error adding to favourites:", error);
+    console.error("Error adding to favourite:", error);
     throw new Error("Addition error in database");
   }
 };

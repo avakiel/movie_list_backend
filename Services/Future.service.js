@@ -35,16 +35,20 @@ const deleteFromFuture = async (id) => {
 
 const addToFuture = async (id) => {
   try {
-    const existingFuture = await Future.findOne({
+    await Future.findOrCreate({
       where: {
         movieId: +id,
       },
     });
+    
+    const movie = await Movie.findOne({
+      where: {
+        id: +id
+      }
+    });
 
-    if (!existingFuture) {
-      await Future.create({ movieId: +id });
-      return id;
-    }
+    return movie;
+
   } catch (error) {
     console.error("Error adding to future:", error);
     throw new Error("Addition error in database");
