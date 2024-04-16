@@ -21,7 +21,7 @@ const deleteFavouriteController = async (req, res) => {
 }
 
 const addToFavouriteController = async (req, res) => {
-    const { id } = req.params
+    const { id } = req.body
 
     const add = await addToFavourite(id)
 

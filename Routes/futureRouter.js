@@ -8,7 +8,7 @@ futureRouter.use(bodyParser.json());
 
 futureRouter.get("/", getAllFutureController);
 futureRouter.delete("/:id", deleteFutureController);
-futureRouter.post("/:id", addToFutureController);
+futureRouter.post("/", addToFutureController);
 
 module.exports = {
   futureRouter,

@@ -8,7 +8,7 @@ favouriteRouter.use(bodyParser.json());
 
 favouriteRouter.get("/", getAllFavouriteController);
 favouriteRouter.delete("/:id", deleteFavouriteController);
-favouriteRouter.post("/:id", addToFavouriteController);
+favouriteRouter.post("/", addToFavouriteController);
 
 module.exports = {
   favouriteRouter,

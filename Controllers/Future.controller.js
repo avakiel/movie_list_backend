@@ -24,7 +24,7 @@ const deleteFutureController = async (req, res) => {
 };
 
 const addToFutureController = async (req, res) => {
-  const { id } = req.params;
+  const { id } = req.body;
   const add = await addToFuture(id);
 
   if (!add) {
