@@ -22,8 +22,6 @@ client.connect(function (err) {
     });
 });
 
-
-// Needed for testing purposes, do not remove
 require('dotenv').config();
 global.TextEncoder = utils.TextEncoder;
 
@@ -35,10 +33,6 @@ const {
   POSTGRES_DB,
 } = process.env;
 
-/*
-  All credentials setted to default values (exsept password - it is exapmle)
-  replace if needed with your own
-*/
 
 const sequelize = new Sequelize({
   dialect: 'postgres',
